@@ -1,0 +1,32 @@
+﻿@page
+@inject ISharedResource _sharedResource
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-1">Languages</h1>
+    <ul class="d-inline-block">
+        @foreach (var item in Model.SupportedLanguages)
+        {
+            <li>@item.Name @item.DisplayName</li>
+        }
+    </ul>
+    <hr />
+    <h1 class="display-1">@_sharedResource["Greeting"]</h1>
+    <h4 class="display-4">@_sharedResource["_language"]</h4>
+    <hr />
+    <h1 class="display-1">Database</h1>
+    <form method="post">
+        <button type="submit">Add Dummy Data</button>
+    </form>
+    <ul class="d-inline-block">
+        @foreach (var item in Model.AModels)
+        {
+            <li>@item.Name - @item.CreationTime - @item.Language</li>
+        }
+    </ul>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <a asp-page="Privacy">test</a>
+</div>

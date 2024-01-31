@@ -1,0 +1,4 @@
+add-migration init -outputdir "Repository/Migrations/A" -context ADbContext
+add-migration init -outputdir "Repository/Migrations/B" -context BDbContext
+update-database -context ADbContext
+update-database -context BDbContext
