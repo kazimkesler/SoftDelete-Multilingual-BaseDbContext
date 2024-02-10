@@ -32,7 +32,7 @@ namespace SoftDeleteMultilingualBaseDbContext.Repository.Contexts
 
         private void UpdateChanges()
         {
-            foreach (var item in ChangeTracker.Entries())
+            foreach (var item in ChangeTracker.Entries<BaseEntity>())
             {
                 if (item.Entity is BaseEntity entity)
                 {
